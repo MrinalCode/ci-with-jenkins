@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
-
+import org.openqa.selenium.chrome.ChromeOptions;
 public class BaseTest {
 
     protected WebDriver driver;
