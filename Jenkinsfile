@@ -15,15 +15,17 @@ pipeline {
             }
         } 
 
-        stage('get the extent report') {
+             stage('Publish TestNG Report') {
             steps {
-                sh '''
-                    mkdir -p reports
-                    cp -r test-output/* reports/ || true
-                '''
+                publishHTML(target: [
+                    reportDir: 'target/surefire-reports',
+                    reportFiles: 'index.html',
+                    reportName: 'TestNG Report'
+                ])
             }
         }
-    }
+}
+     
 
     post {
         always {
