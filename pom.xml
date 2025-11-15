@@ -26,7 +26,13 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile>
-                    </suiteXmlFiles>
+		</suiteXmlFiles>
+		<properties>
+                   <property>
+                     <name>usedefaultlisteners</name>
+                     <value>true</value>
+                   </property>
+             </properties>
                 </configuration>
             </plugin>
         </plugins>
