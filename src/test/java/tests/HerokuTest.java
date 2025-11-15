@@ -1,6 +1,6 @@
 package tests;
 
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
@@ -8,7 +8,7 @@ import static org.testng.Assert.assertNotEquals;
 
 public class HerokuTest extends BaseTest {
 
-    @BeforeClass
+    @BeforeMethod
     public void gotoHome() {
         driver.get("https://the-internet.herokuapp.com");
     }
