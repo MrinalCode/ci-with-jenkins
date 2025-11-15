@@ -7,7 +7,6 @@
         <listener class-name="org.testng.reporters.EmailableReporter" />
         <listener class-name="org.testng.reporters.XMLReporter" />
         <listener class-name="org.testng.reporters.SuiteHTMLReporter" />
-        <listener class-name="org.testng.reporters.ReporterConfig" />
     </listeners>
     <test name="GoogleTest">
         <classes>
