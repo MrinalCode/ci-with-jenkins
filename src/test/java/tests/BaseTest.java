@@ -9,25 +9,13 @@ import org.testng.annotations.BeforeTest;
 public class BaseTest {
 
     protected WebDriver driver;
-    String browser = System.getProperty("browser");
+    //String browser = System.getProperty("browser");
 
     @BeforeTest
     public void setUp() {
-        if (browser != null && !browser.equals("")) {
-            if (browser.equalsIgnoreCase("chrome")) {
-                driver = new ChromeDriver();
-            } else if (browser.equalsIgnoreCase("edge")) {
-                driver = new EdgeDriver();
-            } else {
-                System.out.println("Invalid option - defaulting to Edge");
-                browser = "Edge";
-                driver = new EdgeDriver();
-            }
-        } else {
-            browser = "Edge";
-            driver = new EdgeDriver();
-        }
-    }
+    driver = new ChromeDriver();
+    }    
+   }
 
     @AfterTest
     public void tearDown() {
