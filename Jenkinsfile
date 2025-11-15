@@ -1,36 +1,33 @@
 pipeline {
-    agent { label 'JDK17' }
+    agent any
 
     stages {
 
-        stage('build the code') {
+        stage('Build') {
             steps {
-                sh "mvn clean package"
+                sh 'mvn clean package'
             }
         }
 
         stage('Test') {
             steps {
-                sh "mvn test"
+                sh 'mvn test'
             }
-        } 
+        }
 
-             stage('Publish TestNG Report') {
+        stage('Publish TestNG Report') {
             steps {
                 publishHTML(target: [
                     reportDir: 'target/surefire-reports',
                     reportFiles: 'index.html',
-                    reportName: 'TestNG Report'
+                    reportName: 'TestNG Report',
+                    allowMissing: false,
+                    keepAll: true,
+                    alwaysLinkToLastBuild: true
                 ])
             }
         }
-}
-     
-
-    post {
-        always {
-            echo 'I will always say Hello again!'
-        }
     }
 }
+
 
